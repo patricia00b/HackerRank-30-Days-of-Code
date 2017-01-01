@@ -1,0 +1,8 @@
+mealcost = float(input())
+tip = int(input())
+tax = int(input())
+
+
+tc = mealcost + (mealcost*(tip)/100) + (mealcost*(tax)/100)
+
+print("The total meal cost is", round(tc), "dollars.")
