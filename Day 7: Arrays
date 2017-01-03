@@ -1,0 +1,8 @@
+size = int(input())
+array = list(map(int,input().split()))
+
+print(*reversed(array))
+
+#new_array = []
+#new_array = array[::-1]
+#print(*new_array)
