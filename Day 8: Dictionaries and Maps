@@ -1,0 +1,20 @@
+numbEntries = int(input())
+
+tofind = []
+j = 0
+
+
+data = [input().split() for i in range(numbEntries)] #string format
+phonebook = {names: numb for names,numb in data}  #creates phonebook
+
+while(1):
+    try:
+        tofind = str(input())
+        if tofind in phonebook:
+            print('{}={}'.format(tofind, phonebook[tofind]))
+        else:
+            print("Not found")
+    except EOFError:
+        break
+    # or if (q == ''):  #if there is no input, break it
+            #break
