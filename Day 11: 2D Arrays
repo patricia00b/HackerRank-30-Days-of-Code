@@ -1,0 +1,15 @@
+#!/bin/python3
+import sys
+
+arr = []
+for arr_i in range(6):
+   arr_t = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+   arr.append(arr_t)
+
+f = []
+for a in range(0, 4):
+    for b in range(0, 4):
+        s = sum(arr[a][b:b+3]) + arr[a+1][b+1] + sum(arr[a+2][b:b+3])
+        f.append(s)
+
+print(max(f))
