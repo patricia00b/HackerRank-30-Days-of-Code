@@ -9,7 +9,7 @@ class Person:
     
     class Student(Person):
     def __init__(self,firstName,lastName,idNumber,scores):  #updates the constructor
-        super().__init__(firstName,lastName,idNumber)
+        Person.__init__(self,firstName,lastName,idNumber)  #or super().__init__
         self.scores = scores
         
     def calculate(self):
