@@ -1,0 +1,9 @@
+if s==s[::-1]:
+    print('The word',s,'is a palindrome.')
+else:
+    print ('The word',s,'is not a palindrome.')
+    
+    
+    #OR
+    
+    
