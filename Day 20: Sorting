@@ -1,0 +1,23 @@
+#!/bin/python3
+import sys
+
+n = int(input().strip())
+a = [int(a_temp) for a_temp in input().strip().split(' ')]
+totalswaps = 0
+for i in range(n): #counts number of swaps
+    numbswaps = 0
+    
+    for j in range(len(a)-1): #goes through line of elements
+        if a[j]>a[j+1]: #swaps
+            temp = a[j]
+            a[j] = a[j+1]
+            a[j+1] = temp
+            numbswaps+=1
+            totalswaps+=1
+            
+    if numbswaps == 0: #if didnt swap anything-> is sorted
+        break
+        
+print("Array is sorted in {} swaps.".format(totalswaps))
+print("First Element: {}".format(a[0]))
+print("Last Element: {}".format(a[len(a)-1]))
