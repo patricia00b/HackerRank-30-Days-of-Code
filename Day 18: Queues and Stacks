@@ -23,11 +23,11 @@ else:
         
     def popCharacter(self):
         #method that pops and returns the character at the top of the instance variable.
-        return self.stack.pop()
+        return self.stack.pop()  #Last-In-First-Out (LIFO)
         
     def dequeueCharacter(self):
         #method that dequeues and returns the first character in the  instance variable.
-        return self.queue.pop(0)
+        return self.queue.pop(0)  #First-In-First-Out (FIFO)
         
         # read the string s
 s=input()
