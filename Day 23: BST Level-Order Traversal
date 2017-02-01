@@ -1,1 +1,28 @@
+import sys
 
+class Node:
+    def __init__(self,data):
+        self.right=self.left=None
+        self.data = data  #value of the root element
+class Solution:  #creation of BST
+    def insert(self,root,data):
+        if root==None:
+            return Node(data)
+        else:
+            if data<=root.data:
+                cur=self.insert(root.left,data)
+                root.left=cur
+            else:
+                cur=self.insert(root.right,data)
+                root.right=cur
+        return root
+        
+        
+        
+T=int(input())  #number of test cases
+myTree=Solution()  
+root=None  #pointer pointing to the root of a BST
+for i in range(T):
+    data=int(input())   #value of the element to be added to the BST
+    root=myTree.insert(root,data)
+myTree.levelOrder(root)
