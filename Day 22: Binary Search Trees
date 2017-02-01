@@ -16,7 +16,9 @@ class Solution: #creates the BST
                 root.right=cur
         return root
         
-        
+    def getHeight(self,root):
+        #returns the height of the binary search tree.
+        return -1 if root is None else 1 + max(self.getHeight(root.left),self.getHeight(root.right)) #formula application
         
         
 T=int(input()) #receives input
