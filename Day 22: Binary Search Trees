@@ -1,0 +1,29 @@
+class Node:
+    def __init__(self,data): #inicializes the BST root
+        self.right=self.left=None  #no children
+        self.data = data  #root value
+        
+class Solution: #creates the BST
+    def insert(self,root,data):
+        if root==None:
+            return Node(data)
+        else:
+            if data<=root.data:
+                cur=self.insert(root.left,data)
+                root.left=cur
+            else:
+                cur=self.insert(root.right,data)
+                root.right=cur
+        return root
+        
+        
+        
+        
+T=int(input()) #receives input
+myTree=Solution() #calls solution method
+root=None
+for i in range(T):  #inserts new data in BST
+    data=int(input())
+    root=myTree.insert(root,data)
+height=myTree.getHeight(root)
+print(height) 
