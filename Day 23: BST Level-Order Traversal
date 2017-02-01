@@ -16,8 +16,42 @@ class Solution:  #creation of BST
                 cur=self.insert(root.right,data)
                 root.right=cur
         return root
+    def levelOrder(self,root):
+        queue = [root]
+        while len(queue) is not 0:
+            curr = queue[0]
+            queue = queue[1:]
+            print(str(curr.data) + " ", end="")
+
+            if curr.left is not None:
+                queue.append(curr.left)
+            if curr.right is not None:
+                queue.append(curr.right)
+""" or
+    def levelOrder(self,root):
+        queue = [root] if root else []
+    
+        while queue:
+            node = queue.pop()
+            print(node.data, end=" ")
         
+            if node.left: queue.insert(0,node.left)
+            if node.right: queue.insert(0,node.right)
+or
+    def levelOrder(self, root):
+        traversal = ''
         
+        if root != None:
+            queue = [root]
+            while len(queue) != 0:
+                traversal += str(queue[0].data) + ' '
+                if queue[0].left != None:
+                    queue.append(queue[0].left)
+                if queue[0].right != None:
+                    queue.append(queue[0].right)
+                queue.pop(0)
+        print(traversal)
+"""
         
 T=int(input())  #number of test cases
 myTree=Solution()  
