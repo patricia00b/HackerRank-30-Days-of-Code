@@ -1,2 +1,2 @@
 # HackerRank-30-Days-of-Code
-30 Days of Code Challenges. Language: Python3.
+My solutions to hackerRank 30 Days of Code Challenge.
