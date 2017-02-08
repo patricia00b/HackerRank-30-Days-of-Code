@@ -1,0 +1,43 @@
+class Node: #node class
+    def __init__(self,data):
+        self.data = data
+        self.next = None #pointer to another node
+class Solution: 
+    def insert(self,head,data):
+            p = Node(data)           
+            if head==None:
+                head=p
+            elif head.next==None:
+                head.next=p
+            else:
+                start=head
+                while(start.next!=None):
+                    start=start.next
+                start.next=p
+            return head  
+    def display(self,head):
+        current = head
+        while current:
+            print(current.data,end=' ')
+            current = current.next
+    def removeDuplicates(self,head):  #takes a pointer to the head node of a linked list as a parameter.
+        #deletes any duplicate nodes from the list and returns the head of the updated list.
+        #you simply have to change the next reference from one node so that it points to another node
+        
+        current = head
+        while current.next: #not null, not empty
+            if current.data == current.next.data: #checks if its duplicate
+                current.next = current.next.next  #changes pointer to the next
+            else:
+                current = current.next
+        return head
+        
+        
+mylist= Solution()
+T=int(input()) #the number of nodes to be inserted
+head=None
+for i in range(T):
+    data=int(input()) # value of a node being inserted at the list's tail.
+    head=mylist.insert(head,data)    
+head=mylist.removeDuplicates(head)
+mylist.display(head); 
