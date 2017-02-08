@@ -1,0 +1,11 @@
+n = int(input()) #number of test cases
+for i in range(n):
+    count = 0
+    sample = int(input())
+    for j in range(2,sample,1):
+        if sample%j==0:
+            count+=1
+    if count>=1 or sample is 1:
+        print("Not prime")
+    else:
+        print("Prime")
