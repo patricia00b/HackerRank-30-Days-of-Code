@@ -9,3 +9,6 @@ for i in range(n):
         print("Not prime")
     else:
         print("Prime")
+
+
+#error on test sample 7 and 8
